@@ -14,6 +14,7 @@ import { Component} from '@angular/core';
 export class LinksComponent{
   name: string;
   constructor(){
+    //this.name = serviceName.name;
     var str = sessionStorage.getItem('name');
     if(str){
       this.name = str;
@@ -21,8 +22,5 @@ export class LinksComponent{
     } else {
       this.name = null;
     }
-  }
-  ngOnInit(){
-
   }
 }

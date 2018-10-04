@@ -14,7 +14,7 @@ import {Component} from '@angular/core';
 
 export class AboutComponent {
   name: string;
-  ngOnInit(){
+  constructor(){
     var str = sessionStorage.getItem('name');
     if(str){
       this.name = str;
@@ -22,14 +22,18 @@ export class AboutComponent {
       this.name = null;
     }
   }
+  ngOnInit(){
+
+  }
   setKey(name: string, valid: boolean){
     if(valid){
       sessionStorage.setItem('name', name);
       this.name = name;
-      
+      window.location.reload();
     }
     else{
       console.log('"' + name + '" Not a valid string');
     }
+
   }
 }
