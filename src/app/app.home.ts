@@ -1,10 +1,11 @@
 import { Component }                    from '@angular/core';
 import {  MyCurrencyService }           from './app.currencyservice';
 import { CryptoCurrencyType, coinList } from './CryptoModel';
+import{NameService} from './app.nameService';
 
 @Component({
     
-    template: `
+    template: ` Welcome {{name}}
                 <ul>
                     <li *ngFor="let crcy of currencyArray">
                     <a routerLink="/detail/{{crcy.symbol}}" routerLinkActive="active">{{crcy.name}}</a>
@@ -14,18 +15,20 @@ import { CryptoCurrencyType, coinList } from './CryptoModel';
                     </li>
                 </ul>`,
 
-    providers: [MyCurrencyService]
+    providers: [MyCurrencyService, NameService]
 })
 
 export class HomeComponent {
+    name: String;
     currencyArray: Array<CryptoCurrencyType>;
 
     // Since we are using a provider above we can receive 
     // an instance through an instructor.
-    constructor(private currencyService: MyCurrencyService) {
+    constructor(private currencyService: MyCurrencyService, nameService: NameService) {
         // Store local reference to MyDataService.
         this.currencyArray  = coinList;
         this.getSomeData();
+        this.name = nameService.name;
     }
 
     getCoinArrayIndex(abbreviation) {

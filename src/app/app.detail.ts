@@ -1,23 +1,27 @@
 import { Component }                    from '@angular/core';
 import { ActivatedRoute, Params }       from '@angular/router';
 import {  MyCurrencyService } from './app.currencyservice';
+import { NameService } from './app.nameService';
 
 @Component({
-    template: `
+    template: `Welcome {{name}}
     <img src='https://www.cryptocompare.com/media/19633/btc.png' >
     <br/><br/>
 
     <!-- Draw up and down arrows -->
     &uarr; &darr;
     `,
-    providers: [MyCurrencyService]
+    providers: [MyCurrencyService, NameService]
 })
 export class DetailComponent { 
+    name: string;
     // The constructor sets up the class.
     // Defining private parameters for services in the constructor initializes instances
     // for the entire class.
     constructor(private route: ActivatedRoute, 
-                private currencyService:MyCurrencyService) {
+                private currencyService:MyCurrencyService, 
+                nameService: NameService) {
+        this.name = nameService.name;
     }
 
     // ngOnInit() gets called after the object is set up via the constructor.

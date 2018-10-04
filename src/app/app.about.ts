@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {NameService} from './app.nameService';
 
 @Component({
   template: 
@@ -8,22 +9,14 @@ import {Component} from '@angular/core';
     <input (click)="setKey(nm.value, nm.valid)" type="submit" />
     <br><br>
     <p #ap [hidden]="nm.valid || nm.pristine"> Minimum 2 characters and only alphabetical</p>
-  
-  `
+  `,
+  providers: [NameService]
 })
 
 export class AboutComponent {
   name: string;
-  constructor(){
-    var str = sessionStorage.getItem('name');
-    if(str){
-      this.name = str;
-    } else {
-      this.name = null;
-    }
-  }
-  ngOnInit(){
-
+  constructor(nameService: NameService){
+    this.name = nameService.name;
   }
   setKey(name: string, valid: boolean){
     if(valid){
