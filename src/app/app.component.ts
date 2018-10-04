@@ -3,18 +3,22 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-root',
     template: `
-            <h2>Header</h2>
-            <a routerLink="/home" routerLinkActive="active">Home</a>
+            {{name}}
+           <app-links></app-links>
 
             <!-- Where router should display a view -->
             <router-outlet></router-outlet>
         
-            <h3>Footer</h3>
+            
+            <app-links></app-links>
              `,
 })
 export class AppComponent {
-    constructor() {
-
+  name: string;
+  constructor(){
+    if (sessionStorage.getItem("name")) {
+        this.name = sessionStorage.getItem("name");
     }
+  }
 }
 

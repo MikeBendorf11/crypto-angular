@@ -3,7 +3,7 @@ import {  MyCurrencyService }           from './app.currencyservice';
 import { CryptoCurrencyType, coinList } from './CryptoModel';
 
 @Component({
-    selector: 'app-root',
+    
     template: `
                 <ul>
                     <li *ngFor="let crcy of currencyArray">
@@ -46,7 +46,7 @@ export class HomeComponent {
 
                 // Log the data in the console to see what it looks like.
                 // Be sure to use the debugger.
-                console.log(JSON.stringify(data));
+                //console.log(JSON.stringify(data));
 
                 // Set the price for each item.
                 for(var i=0; i<this.currencyArray.length; i++) {
@@ -59,7 +59,7 @@ export class HomeComponent {
             },
             // 2. Handle error.
             error => {
-                alert(error)
+                //console.log(error)
             });
     }
 }
