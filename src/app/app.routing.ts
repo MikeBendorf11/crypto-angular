@@ -6,7 +6,7 @@ import { HomeComponent }         from './app.home';
 import { AboutComponent } from './app.about';
 
 const appRoutes: Routes = [
-  { path: 'detail/:symbol/:index/:price', component: DetailComponent },
+  { path: 'detail/:coinName/:symbol/:index/:price', component: DetailComponent },
   { path: 'home',     component: HomeComponent },
   { path: 'about', component: AboutComponent},
   { path: '**', component: HomeComponent}

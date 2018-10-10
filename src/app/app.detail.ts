@@ -4,11 +4,12 @@ import {  MyCurrencyService } from './app.currencyservice';
 import { NameService } from './app.nameService';
 
 @Component({
-    template: '<h1>here</h1>',
+    templateUrl: 'app.detail.html',
     providers: [MyCurrencyService, NameService]
 })
 export class DetailComponent { 
     name: string;
+    coinName: string;
     symbol: string;
     index: number;
     price: number;
@@ -27,6 +28,7 @@ export class DetailComponent {
             this.symbol = params['symbol'];
             this.index = params['index'];
             this.price = params['price'];
+            this.coinName = params['coinName']
             //console.log(localID);
             this.getCurrencyInformation();
         });
@@ -40,10 +42,10 @@ export class DetailComponent {
 
                 // Log the data in the console to see what it looks like.
                 // Be sure to use the debugger.
-                console.log(JSON.stringify(data));
+                //console.log(JSON.stringify(data));
                 let FINAL_UPDATE = 1;
                 this.priceInfo    = data["Data"][FINAL_UPDATE];
-                console.log("Low: " + this.priceInfo.low + "   High: " + this.priceInfo.high);
+                //console.log("Low: " + this.priceInfo.low + "   High: " + this.priceInfo.high);
             },
             // 2. Handle error.
             error => {

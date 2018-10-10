@@ -10,7 +10,7 @@ import { ViewFlags } from '@angular/core/src/view';
                 
                 <ul>
                     <li *ngFor="let crcy of currencyArray; index as i">
-                    <a routerLink="/detail/{{crcy.symbol}}/{{i}}/{{price}}" routerLinkActive="active">{{crcy.name}}</a>
+                    <a routerLink="/detail/{{crcy.name}}/{{crcy.symbol}}/{{i}}/{{currencyArray[i].price}}" routerLinkActive="active">{{crcy.name}}</a>
                     <span> {{crcy.name}} </span>
                     <span> {{crcy.symbol}} </span>   
                     <span> {{ crcy.price | currency:'USD'  }} USD </span>
@@ -52,7 +52,6 @@ export class HomeComponent {
                         let currentSymbol = this.currencyArray[i].symbol;
                         //let idx           = this.getCoinArrayIndex(currentSymbol);
                         this.currencyArray[i].price = data[currentSymbol].USD; //changed idx to i
-
                     }
                 },
                 // 2. Handle error.
