@@ -13,7 +13,7 @@ export class MyCurrencyService {  //for BTC
     ) { 
         route.params.forEach(params=>{
             this.symbol = params['symbol']
-            console.log(this.symbol);
+            
         })
     }
 

@@ -1,0 +1,14 @@
+<div id="detailCont">
+  Welcome {{name}} <br/>
+  <div id="detLabel">
+    <img width="50px" src='images/{{symbol}}.png' > <b>Bitcoin</b>
+  </div>
+  <span>{{symbol}}</span>
+  <span>{{price}} USD</span>
+  <app-trend [index]="index"></app-trend>
+  <span>Open</span>
+  <span>{{priceInfo.open}}</span>
+  <span>Close</span>
+  <span>{{priceInfo.close}}</span>
+    <br/><br/>
+</div>

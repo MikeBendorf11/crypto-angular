@@ -10,7 +10,7 @@ import { ViewFlags } from '@angular/core/src/view';
                 
                 <ul>
                     <li *ngFor="let crcy of currencyArray; index as i">
-                    <a routerLink="/detail/{{crcy.symbol}}/{{i}}" routerLinkActive="active">{{crcy.name}}</a>
+                    <a routerLink="/detail/{{crcy.symbol}}/{{i}}/{{price}}" routerLinkActive="active">{{crcy.name}}</a>
                     <span> {{crcy.name}} </span>
                     <span> {{crcy.symbol}} </span>   
                     <span> {{ crcy.price | currency:'USD'  }} USD </span>
