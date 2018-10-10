@@ -7,11 +7,12 @@ import { DetailComponent } from './app.detail';
 import { routing }       from './app.routing';
 import { AboutComponent } from './app.about';
 import { LinksComponent } from './app.links';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import {PriceComp} from './app.priceComp'
 
 @NgModule({
   declarations: [
-    AppComponent, DetailComponent, HomeComponent, AboutComponent, LinksComponent
+    AppComponent, DetailComponent, HomeComponent, AboutComponent, LinksComponent, PriceComp
   ],
   imports: [
     BrowserModule, HttpModule, routing, FormsModule
