@@ -35,7 +35,7 @@ export class DetailComponent {
     }
 
     getCurrencyInformation() {
-        this.currencyService.getCurrencyDetail()
+        this.currencyService.getCurrencyDetail(null, false)
         .subscribe(
             // 1. Handle successful data.
             data => {
@@ -47,7 +47,7 @@ export class DetailComponent {
                 let priceInfo    = data["Data"][FINAL_UPDATE];
                 let open  = priceInfo.open;
                 let close = priceInfo.close;
-                //console.log("Low: " + priceInfo.low + "   High: " + priceInfo.high);
+                console.log("Low: " + priceInfo.low + "   High: " + priceInfo.high);
             },
             // 2. Handle error.
             error => {
