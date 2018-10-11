@@ -1,14 +1,12 @@
 import { Component }                    from '@angular/core';
 import { ActivatedRoute, Params }       from '@angular/router';
 import {  MyCurrencyService } from './app.currencyservice';
-import { NameService } from './app.nameService';
 
 @Component({
     templateUrl: 'app.detail.html',
-    providers: [MyCurrencyService, NameService]
+    providers: [MyCurrencyService]
 })
-export class DetailComponent { 
-    name: string;
+export class DetailComponent {
     coinName: string;
     symbol: string;
     index: number;
@@ -16,10 +14,7 @@ export class DetailComponent {
     priceInfo: any;
 
     constructor(private route: ActivatedRoute, 
-                private currencyService:MyCurrencyService, 
-                nameService: NameService) {
-        this.name = nameService.name;
-    }
+                private currencyService:MyCurrencyService) { }
 
     // ngOnInit() gets called after the object is set up via the constructor.
     // At this point, the class is able to handle the parameters passed to it.

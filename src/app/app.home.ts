@@ -1,36 +1,34 @@
 import { Component } from '@angular/core';
 import { MyCurrencyService } from './app.currencyservice';
 import { CryptoCurrencyType, coinList } from './CryptoModel';
-import { NameService } from './app.nameService';
-import { ViewFlags } from '@angular/core/src/view';
 
 @Component({
 
-    template: ` Welcome {{name}}
+    template: `
                 
-                <ul>
+                <ul id="coinList">
                     <li *ngFor="let crcy of currencyArray; index as i">
                     <a routerLink="/detail/{{crcy.name}}/{{crcy.symbol}}/{{i}}/{{currencyArray[i].price}}" routerLinkActive="active">{{crcy.name}}</a>
-                    <span> {{crcy.name}} </span>
-                    <span> {{crcy.symbol}} </span>   
-                    <span> {{ crcy.price | currency:'USD'  }} USD </span>
-                    <app-trend [index]=i></app-trend>
+                    
+                    <span> <b>{{crcy.symbol}}</b> </span>   
+                    <span> {{ crcy.price | currency:'USD'  }} USD <app-trend [index]=i></app-trend></span>
+                    
                     </li>
                     
                 </ul>`,
 
-    providers: [MyCurrencyService, NameService]
+    providers: [MyCurrencyService]
 })
 
 export class HomeComponent {
     name: String;
     currencyArray: Array<CryptoCurrencyType>;
     
-    constructor(private currencyService: MyCurrencyService, nameService: NameService) {
+    constructor(private currencyService: MyCurrencyService) {
         // Store local reference to MyDataService.
         this.currencyArray = coinList;
         this.getSomeData();
-        this.name = nameService.name;
+        
     }
 
     // getCoinArrayIndex(abbreviation) {

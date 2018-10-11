@@ -27,10 +27,10 @@ export class PriceComp {
         let FINAL_UPDATE = 1;
         let priceInfo = data["Data"][FINAL_UPDATE];                        
         if(priceInfo.close < priceInfo.open){
-            this.trend ='&#x2193;';
+            this.trend ='<b>&#x2193;</b>';
         }
         else {
-            this.trend = '&#x2191;';
+            this.trend = '<i>&#x2191;</i>';
         }              
       }, 
       error => {console.log(error)}

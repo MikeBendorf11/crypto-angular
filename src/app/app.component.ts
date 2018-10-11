@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
+import { NameService } from './app.nameService';
 
 @Component({
     selector: 'app-root',
-    template: `
-            
-           <app-links></app-links>
-
-            <!-- Where router should display a view -->
-            <router-outlet></router-outlet>         
-            <app-links></app-links>
-             `,
+    templateUrl:'app.component.html',
+             providers: [NameService]
 })
-export class AppComponent {}
+export class AppComponent {
+    name: String;
+    constructor( nameService: NameService) {
+        this.name = nameService.name;
+    }
+}
 
