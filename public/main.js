@@ -232,7 +232,7 @@ var MyCurrencyService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"detailCont\">  \r\n  <div id=\"detLabel\">\r\n    <img width=\"50px\" src=\"./assets/images/{{symbol}}.png\" >\r\n    <b>{{coinName}}</b>\r\n  </div>\r\n  <div id=\"table-div\">\r\n    <table>\r\n    <tr>\r\n      <td><b>{{symbol}}</b></td>\r\n      <td>\r\n        {{price | currency:'USD'  }} USD <app-trend [index]=\"index\"></app-trend>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td>Open</td>\r\n      <td>{{priceInfo.open | currency:'USD'  }} USD</td>\r\n    </tr>\r\n    <tr>\r\n      <td>Close</td>\r\n      <td>{{priceInfo.close | currency:'USD'  }} USD</td>\r\n    </tr>\r\n  </table>\r\n  </div>\r\n  \r\n  \r\n  \r\n  \r\n  <span></span>\r\n  <span></span>\r\n  <span></span>\r\n    <br/><br/>\r\n</div>"
+module.exports = "<div id=\"detailCont\">  \r\n  <div id=\"detLabel\">\r\n    <img width=\"50px\" src=\"{{symbol}}.png\" >\r\n    <b>{{coinName}}</b>\r\n  </div>\r\n  <div id=\"table-div\">\r\n    <table>\r\n    <tr>\r\n      <td><b>{{symbol}}</b></td>\r\n      <td>\r\n        {{price | currency:'USD'  }} USD <app-trend [index]=\"index\"></app-trend>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td>Open</td>\r\n      <td>{{priceInfo.open | currency:'USD'  }} USD</td>\r\n    </tr>\r\n    <tr>\r\n      <td>Close</td>\r\n      <td>{{priceInfo.close | currency:'USD'  }} USD</td>\r\n    </tr>\r\n  </table>\r\n  </div>\r\n  \r\n  \r\n  \r\n  \r\n  <span></span>\r\n  <span></span>\r\n  <span></span>\r\n    <br/><br/>\r\n</div>"
 
 /***/ }),
 
