@@ -1,6 +1,6 @@
 body{
-  background: url(./assets/images/bg.png);
-  background-size:cover;
+  background: url(./assets/images/btc_bg.png);
+  background-size:100% 100vh;
   background-repeat: no-repeat;
   font-family: Verdana;
   font-size: 13.5px;
@@ -12,7 +12,7 @@ ul li{
   display: flex;
 }
 li a{
-  min-width: 70px;
+  min-width: 90px;
   flex: 25%;
 }
 li span:nth-of-type(1){
@@ -20,26 +20,36 @@ li span:nth-of-type(1){
   flex: 55%;
 }
 li span:nth-of-type(2){
+  vertical-align: center;
   text-align: right;
   margin-right: 35%;
-  min-width: 120px;
-  flex: 20%;
+  min-width: 130px;
+  flex: 20%; 
 }
 
 #container{
   width: 50%;
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
   border: 1px solid black;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 20px; 
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,.3)
+}
+#top-nav{
+  font-family: "Franklin Gothic Medium";
+  font-weight: 900;
+  font-size: 1.5em;
+  background: rgba(214, 214, 214, 0.7);
+  border: 10px solid rgba(236, 236, 236, 0.7);
 }
 #top-nav, #bottom-nav{
   display: flex;
 }
 #top-nav > span, #bottom-nav > span{
-  flex: 80%;
+  flex: 70%;
   text-align: center;
 }
 app-links{
@@ -48,12 +58,12 @@ app-links{
   flex: 20%
 }
 #bottom-nav, #bottom-nav a:link, #bottom-nav a:visited{
-  color: grey;
+  color: rgb(83, 83, 83);
 }
 @media (max-width:780px){
   #container{
     margin: 0;
-    width: 95%;
+    width: 90%;
   }
 }
 app-trend b{
